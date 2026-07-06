@@ -17,6 +17,7 @@
 | 项目 | 目录 | 状态 | 等级 | 说明 |
 |------|------|------|------|------|
 | RepPilot 医药代表智能助手 | [pharma-rep-agent](./pharma-rep-agent/) | 有结论 | L2 | H5 + Web 双端 Agent，面向医药代表 |
+| 曜承 HR Agent 招聘初筛助手 | [hr-agent](./hr-agent/) | 一期工程完结 / release HOLD | L3 | 企微 + 独立 Web 双版本，邮箱入站 + BOSS 助手 |
 
 > 新建项目时在此追加一行，并创建 `projects/<project-slug>/README.md`。
 
