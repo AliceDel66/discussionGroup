@@ -14,7 +14,7 @@
 | **状态** | 前端工程化重构中（MP 原型仅 UI 参考）；后端 reppilot-api 暂缓 |
 | **客户端** | H5 + Web + Admin（三端）；后端 **reppilot-api**（待建） |
 | **目标用户** | 医药代表（MVP 首发 1 个专科，建议心内科） |
-| **代码仓库** | [`reppilot`](../../../reppilot)（`h5/` · `web/` · `admin/` 三端） |
+| **代码仓库** | 前端 [`reppilot`](https://github.com/AliceDel66/reppilot)（`h5/` · `web/` · `admin/` 原型）· 后端 `reppilot-api`（暂缓） |
 
 ---
 
