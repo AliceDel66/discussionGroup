@@ -9,12 +9,12 @@
 | 项 | 值 |
 |----|-----|
 | **Slug** | `pharma-rep-agent` |
-| **版本** | v0.2 |
+| **版本** | v0.3 |
 | **等级** | L2（产品层有结论） |
-| **状态** | 有结论，待确认项清零后可交 Codex |
-| **客户端** | H5（移动浏览器/PWA）+ Web（桌面浏览器） |
+| **状态** | 前端工程化重构中（MP 原型仅 UI 参考）；后端 reppilot-api 暂缓 |
+| **客户端** | H5 + Web + Admin（三端）；后端 **reppilot-api**（待建） |
 | **目标用户** | 医药代表（MVP 首发 1 个专科，建议心内科） |
-| **代码仓库** | （待补充，非本仓库） |
+| **代码仓库** | [`reppilot`](../../../reppilot)（`h5/` · `web/` · `admin/` 三端） |
 
 ---
 
@@ -22,9 +22,11 @@
 
 | 文档 | 路径 | 说明 |
 |------|------|------|
-| **产品 Spec** | [product/spec.md](./product/spec.md) | 功能定义、流程图、数据模型、安全边界 |
-| **开发 Plan** | [plans/plan.md](./plans/plan.md) | Codex 任务拆解（34 项）、验收标准 |
-| **技术架构** | [tech/architecture.md](./tech/architecture.md) | 双端架构、选型、API、部署 |
+| **产品 Spec** | [product/spec.md](./product/spec.md) | 用户端功能定义、流程图、数据模型、安全边界 |
+| **Admin Spec** | [product/admin-spec.md](./product/admin-spec.md) | 后台管理端：审核、信息源、资料库、合规、角色权限 |
+| **开发 Plan（后端）** | [plans/plan.md](./plans/plan.md) | API / Agent 审核 / DB（**暂缓**） |
+| **开发 Plan（前端）** | [plans/frontend-plan.md](./plans/frontend-plan.md) | **Codex 优先**：工程化重构、设计系统、路由、Mock |
+| **技术架构** | [tech/architecture.md](./tech/architecture.md) | 双端+Admin 架构、reppilot-api、Agent 审核、部署 |
 | **商业分析** | [business/business.md](./business/business.md) | 市场、竞品、定价、GTM |
 | **讨论记录** | [ideas/2026-07-06-pharma-rep-agent.md](./ideas/2026-07-06-pharma-rep-agent.md) | 需求演进与决策脉络 |
 
@@ -43,13 +45,27 @@
 
 ---
 
+## UI 设计稿（Magic Patterns）
+
+| 端 | Editor ID | 编辑器 |
+|----|-----------|--------|
+| H5 用户端 | `8fhtf7e7nwwhyqedsfjyxq` | [打开](https://www.magicpatterns.com/c/8fhtf7e7nwwhyqedsfjyxq) |
+| Web 用户端 | `fmym8gyxshrrcbyoulnjdu` | [打开](https://www.magicpatterns.com/c/fmym8gyxshrrcbyoulnjdu) |
+| **Admin 后台** | `tqyr3td9fnwxd1aqhjnvj5` | [打开](https://www.magicpatterns.com/c/tqyr3td9fnwxd1aqhjnvj5) |
+
+- 用户端风格：**Apple Health Warmth**（温暖、关怀）
+- Admin 风格：**Ops Console · Review Clarity**（运营效率、审核清晰，与用户端区分）
+
+---
+
 ## 目录结构
 
 ```
 pharma-rep-agent/
 ├── README.md                 # 本文件（项目入口）
 ├── product/
-│   └── spec.md               # L2 产品规格
+│   ├── spec.md               # L2 用户端产品规格
+│   └── admin-spec.md         # L2 Admin 后台规格
 ├── plans/
 │   └── plan.md               # L3 Codex 任务规划
 ├── tech/
@@ -79,8 +95,8 @@ pharma-rep-agent/
 
 - [ ] 产品正式名称
 - [ ] MVP 首发专科
-- [ ] 注册方式（手机号 vs 邮箱）
-- [ ] 目标代码仓库路径
+- [ ] 注册方式 → MVP **邮箱+密码**（手机号 OTP 预留）
+- [x] 前端代码仓库 → [`reppilot`](../../../reppilot)（h5 / web / admin）
 - [ ] 域名 + HTTPS
 - [ ] 首发产品资料 PDF 来源
 
@@ -100,4 +116,4 @@ pharma-rep-agent/
 |------|------|------|
 | v0.1 | 2026-07-06 | 初版 Spec / Plan / 架构 |
 | v0.2 | 2026-07-06 | 客户端改为 H5 + Web，移除微信小程序 |
-| v0.2 | 2026-07-06 | 迁入 `projects/pharma-rep-agent/` 项目文件夹 |
+| v0.3 | 2026-07-07 | 新增 [`frontend-plan.md`](./plans/frontend-plan.md)：前端工程化重构（MP 仅 UI 参考） |
